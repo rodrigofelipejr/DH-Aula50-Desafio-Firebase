@@ -17,5 +17,10 @@ class LoginActivity : AppCompatActivity() {
         binding.textViewCreateAccount.setOnClickListener {
             startActivity(Intent(this@LoginActivity, CadastroActivity::class.java))
         }
+
+        binding.buttonLogin.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
     }
 }
