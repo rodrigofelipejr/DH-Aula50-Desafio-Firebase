@@ -4,4 +4,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="desafio_firebase">Desafio Firebase</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="remember">Remember</string>
+    <string name="create_account">Create account</string>
 </resources>
