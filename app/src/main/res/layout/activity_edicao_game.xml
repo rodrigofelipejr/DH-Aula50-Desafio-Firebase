@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ui.EdicaoGameActivity">
+
+        <ImageView
+            android:id="@+id/imageView_cover"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/custom_red"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mortal_kombat11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Mortal Kombat X"
+            android:textColor="@android:color/white"
+            android:textFontWeight="800"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
+            app:layout_constraintStart_toStartOf="@id/imageView_cover" />
+
+        <Button
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_margin="8dp"
+            android:stateListAnimator="@null"
+            app:icon="@drawable/ic_baseline_arrow_back_24"
+            app:iconGravity="textEnd"
+            app:iconSize="32dp"
+            app:iconTint="@android:color/white"
+            app:layout_constraintStart_toStartOf="@id/imageView_cover"
+            app:layout_constraintTop_toTopOf="@id/imageView_cover" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:backgroundTint="@color/custom_red"
+            android:elevation="0dp"
+            android:src="@drawable/ic_baseline_edit_24"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_cover"
+            app:layout_constraintEnd_toEndOf="@id/imageView_cover"
+            app:layout_constraintTop_toBottomOf="@id/imageView_cover"
+            app:tint="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_cover">
+
+            <TextView
+                android:id="@+id/textView_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mortal Konbat X"
+                android:textFontWeight="700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_createdAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="Lançamento: 2018"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/description_sample" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
