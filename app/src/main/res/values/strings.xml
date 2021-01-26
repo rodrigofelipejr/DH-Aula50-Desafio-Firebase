@@ -10,4 +10,8 @@
     <string name="remember">Remember</string>
     <string name="create_account">Create account</string>
     <string name="name">Name</string>
+    <string name="created_at">Created at</string>
+    <string name="save_game">Save Game</string>
+    <string name="image_game">Image game</string>
+    <string name="description">Description</string>
 </resources>

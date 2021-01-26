@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio_firebase">
         <activity
-            android:name=".views.ui.CadastroActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Firebase.Fullscreen" />
-        <activity
-            android:name=".views.ui.LoginActivity"
+            android:name=".views.ui.CadastroGameActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Firebase.Fullscreen">
             <intent-filter>
@@ -24,11 +20,21 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".views.ui.CadastroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Firebase.Fullscreen" />
+        <activity
+            android:name=".views.ui.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Firebase.Fullscreen">
+
+        </activity>
+        <activity
             android:name=".views.ui.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Firebase.Fullscreen"></activity>
+            android:theme="@style/Theme.Firebase.Fullscreen" />
         <activity android:name=".views.ui.MainActivity" />
     </application>
 
