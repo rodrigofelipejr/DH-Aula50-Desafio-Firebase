@@ -92,7 +92,7 @@
                     android:id="@+id/edit_password_repeat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password"
+                    android:hint="@string/repeate_password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:textColor="@color/teal_200" />
