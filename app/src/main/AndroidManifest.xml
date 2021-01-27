@@ -12,19 +12,11 @@
         <activity
             android:name=".views.ui.EdicaoGameActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Firebase.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.Firebase.Fullscreen" />
         <activity
             android:name=".views.ui.CadastroGameActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Firebase.Fullscreen">
-
-        </activity>
+            android:theme="@style/Theme.Firebase.Fullscreen" />
         <activity
             android:name=".views.ui.CadastroActivity"
             android:screenOrientation="portrait"
@@ -32,14 +24,22 @@
         <activity
             android:name=".views.ui.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Firebase.Fullscreen"></activity>
+            android:theme="@style/Theme.Firebase.Fullscreen" />
         <activity
             android:name=".views.ui.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Firebase.Fullscreen" />
-        <activity android:name=".views.ui.MainActivity" />
+        <activity
+            android:name=".views.ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
