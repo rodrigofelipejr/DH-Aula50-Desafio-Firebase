@@ -1,5 +1,6 @@
 package com.house.desafio_firebase.views.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.house.desafio_firebase.databinding.ActivityEdicaoGameBinding
@@ -16,12 +17,19 @@ class EdicaoGameActivity : AppCompatActivity() {
 
         val currentGame = intent.getSerializableExtra("game") as Game
 
-        binding.textViewTitleA.text = currentGame.name
-        binding.textViewTitleB.text = currentGame.name
-        binding.textViewCreatedAt.text = currentGame.releaseDate
+        binding.textViewNameA.text = currentGame.name
+        binding.textViewNameB.text = currentGame.name
+        binding.textViewReleaseDate.text = currentGame.releaseDate
         binding.textViewDescription.text = currentGame.description
 
         Picasso.get().load(currentGame.imageUrl)
             .into(binding.imageViewCover)
+
+        binding.fabEdit.setOnClickListener{
+            finishAffinity()
+            val intent = Intent(it.context, CadastroGameActivity::class.java)
+            intent.putExtra("game", currentGame)
+            it.context.startActivity(intent)
+        }
     }
 }

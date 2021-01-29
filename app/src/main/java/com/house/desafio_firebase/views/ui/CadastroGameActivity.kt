@@ -40,6 +40,15 @@ class CadastroGameActivity : AppCompatActivity() {
 
         init()
         setListeners()
+
+        val currentGame = intent.getSerializableExtra("game") as Game
+
+        binding.editName.setText(currentGame.name)
+        binding.editReleaseDate.setText(currentGame.releaseDate)
+        binding.editDescription.setText(currentGame.description)
+
+        Picasso.get().load(currentGame.imageUrl)
+            .into(binding.imageViewRounded)
     }
 
     private fun setListeners() {
@@ -67,8 +76,8 @@ class CadastroGameActivity : AppCompatActivity() {
 
     fun getGame(): Game {
         return Game(
-            binding.editTitle.text.toString(),
-            binding.editCreatedAt.text.toString(),
+            binding.editName.text.toString(),
+            binding.editReleaseDate.text.toString(),
             binding.editDescription.text.toString(),
             cover,
         )
