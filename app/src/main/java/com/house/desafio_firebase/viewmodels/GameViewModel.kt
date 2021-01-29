@@ -9,7 +9,7 @@ import com.house.desafio_firebase.services.collectionGames
 import com.house.desafio_firebase.services.db
 import kotlinx.coroutines.launch
 
-class GameViewModel: ViewModel() {
+class GameViewModel : ViewModel() {
     var listGames = MutableLiveData<ArrayList<Game>>()
     val response = MutableLiveData<String>()
 
@@ -22,6 +22,7 @@ class GameViewModel: ViewModel() {
                         val gamesList = arrayListOf<Game>()
                         for (document in task.result!!) {
                             val game = Game(
+                                document.id as String,
                                 document.data["name"] as String,
                                 document.data["releaseDate"] as String,
                                 document.data["description"] as String,
@@ -49,6 +50,30 @@ class GameViewModel: ViewModel() {
 
             db.collection("games")
                 .add(obj)
+                .addOnSuccessListener { documentReference ->
+                    response.value = "Success"
+                }
+                .addOnFailureListener { e ->
+                    response.value = e.toString()
+                }
+        }
+    }
+
+    fun updateGame(game: Game) {
+        viewModelScope.launch {
+            val obj: MutableMap<String, Any> = HashMap()
+            obj["name"] = game.name
+            obj["releaseDate"] = game.releaseDate
+            obj["description"] = game.description
+            obj["imageUrl"] = game.imageUrl
+
+            db.collection("games")
+                .document(game.id)
+                .update(
+                    "description", game.description,
+                    "imageUrl", game.imageUrl,
+                    "name", game.name,
+                )
                 .addOnSuccessListener { documentReference ->
                     response.value = "Success"
                 }

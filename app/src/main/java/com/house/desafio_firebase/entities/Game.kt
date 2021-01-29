@@ -3,6 +3,7 @@ package com.house.desafio_firebase.entities
 import java.io.Serializable
 
 data class Game(
+    var id: String = "",
     var name: String,
     var releaseDate: String,
     var description: String,

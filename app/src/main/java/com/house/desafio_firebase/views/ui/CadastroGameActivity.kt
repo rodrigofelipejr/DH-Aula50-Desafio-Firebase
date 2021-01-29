@@ -41,14 +41,31 @@ class CadastroGameActivity : AppCompatActivity() {
         init()
         setListeners()
 
-        val currentGame = intent.getSerializableExtra("game") as Game
+        var gameExtra = intent.getSerializableExtra("game") as? Game
 
-        binding.editName.setText(currentGame.name)
-        binding.editReleaseDate.setText(currentGame.releaseDate)
-        binding.editDescription.setText(currentGame.description)
+        if (gameExtra != null) {
+            binding.editName.setText(gameExtra.name)
+            binding.editReleaseDate.setText(gameExtra.releaseDate)
+            binding.editDescription.setText(gameExtra.description)
 
-        Picasso.get().load(currentGame.imageUrl)
-            .into(binding.imageViewRounded)
+            Picasso.get().load(gameExtra.imageUrl)
+                .into(binding.imageViewRounded)
+
+            cover = gameExtra.imageUrl
+
+            binding.buttonCreateGame.setOnClickListener {
+                var game = getGame()
+                game.id = gameExtra.id
+                viewModel.updateGame(game)
+                toMain()
+            }
+        } else {
+            binding.buttonCreateGame.setOnClickListener {
+                var game = getGame()
+                viewModel.saveGame(game)
+                toMain()
+            }
+        }
     }
 
     private fun setListeners() {
@@ -62,12 +79,6 @@ class CadastroGameActivity : AppCompatActivity() {
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(Intent.createChooser(intent, "Selecionar imagem"), CODE_IMG)
         }
-
-        binding.buttonCreateGame.setOnClickListener {
-            var game = getGame()
-            viewModel.saveGame(game)
-            toMain()
-        }
     }
 
     private fun init() {
@@ -76,10 +87,10 @@ class CadastroGameActivity : AppCompatActivity() {
 
     fun getGame(): Game {
         return Game(
-            binding.editName.text.toString(),
-            binding.editReleaseDate.text.toString(),
-            binding.editDescription.text.toString(),
-            cover,
+            name = binding.editName.text.toString(),
+            releaseDate = binding.editReleaseDate.text.toString(),
+            description = binding.editDescription.text.toString(),
+            imageUrl = cover,
         )
     }
 

@@ -16,7 +16,6 @@ import com.squareup.picasso.Picasso
 
 class GameAdapter(var context: Context, var listGames : ArrayList<Game>) : RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -49,12 +48,5 @@ class GameAdapter(var context: Context, var listGames : ArrayList<Game>) : Recyc
         var name: TextView = itemView.findViewById(R.id.textView_name)
         var releaseDate: TextView = itemView.findViewById(R.id.textView_releaseDate)
         var imageUrl: ImageView = itemView.findViewById(R.id.imageView)
-    }
-
-    fun add(game: ArrayList<Game>) {
-        val positionStart = this.listGames.size
-        listGames.addAll(game)
-        val itemCount = this.listGames.size
-        notifyItemRangeChanged(positionStart, itemCount)
     }
 }
