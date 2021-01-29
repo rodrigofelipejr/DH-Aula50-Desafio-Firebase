@@ -3,9 +3,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="6dp"
-    android:background="@color/white"
+    android:padding="0dp"
+    android:backgroundTint="@color/white"
     app:cardCornerRadius="18dp">
 
     <LinearLayout
@@ -23,7 +24,7 @@
             app:srcCompat="@drawable/mortal_kombat11" />
 
         <TextView
-            android:id="@+id/textView_title"
+            android:id="@+id/textView_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
@@ -33,13 +34,14 @@
             android:text="@string/mortal_kombat_11"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView_createdAt"
+            android:id="@+id/textView_releaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
+            android:textColor="@color/custom_grey_700"
             android:text="@string/_2019"
             android:textSize="18sp" />
 

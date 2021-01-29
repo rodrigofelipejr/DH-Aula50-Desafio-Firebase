@@ -1,9 +1,6 @@
-package com.house.digital.services
+package com.house.desafio_firebase.services
 
 import com.google.firebase.firestore.FirebaseFirestore
-
-//class Firebase {
-//}
 
 var db = FirebaseFirestore.getInstance()
 var collectionGames = db.collection("games")

@@ -123,9 +123,8 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:background="@color/custom_red"
             android:contentDescription="@string/image_game"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_camera" />
 
     </androidx.cardview.widget.CardView>

@@ -1,9 +1,9 @@
-package com.house.digital.views.ui
+package com.house.desafio_firebase.views.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.house.digital.databinding.ActivitySplashBinding
+import com.house.desafio_firebase.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding

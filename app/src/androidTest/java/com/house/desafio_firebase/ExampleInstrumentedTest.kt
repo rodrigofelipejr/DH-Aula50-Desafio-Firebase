@@ -1,4 +1,4 @@
-package com.house.digital
+package com.house.desafio_firebase
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.house.digital", appContext.packageName)
+        assertEquals("com.house.desafio_firebase", appContext.packageName)
     }
 }

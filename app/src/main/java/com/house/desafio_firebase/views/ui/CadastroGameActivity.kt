@@ -1,4 +1,4 @@
-package com.house.digital.views.ui
+package com.house.desafio_firebase.views.ui
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -6,10 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.house.digital.databinding.ActivityCadastroGameBinding
-import com.house.digital.services.collectionGames
+import com.house.desafio_firebase.databinding.ActivityCadastroGameBinding
+import com.house.desafio_firebase.entities.Game
+import com.house.desafio_firebase.viewmodels.GameViewModel
+import com.squareup.picasso.Picasso
 import dmax.dialog.SpotsDialog
 
 class CadastroGameActivity : AppCompatActivity() {
@@ -19,6 +24,14 @@ class CadastroGameActivity : AppCompatActivity() {
     lateinit var alertDialog: AlertDialog
     lateinit var storageReference: StorageReference
     private val CODE_IMG = 777
+
+    val viewModel by viewModels<GameViewModel> {
+        object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return GameViewModel() as T
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +55,9 @@ class CadastroGameActivity : AppCompatActivity() {
         }
 
         binding.buttonCreateGame.setOnClickListener {
-            var _game = getGame()
-            saveGame(_game)
+            var game = getGame()
+            viewModel.saveGame(game)
+            toMain()
         }
     }
 
@@ -51,26 +65,19 @@ class CadastroGameActivity : AppCompatActivity() {
         alertDialog = SpotsDialog.Builder().setContext(this).build()
     }
 
-    fun getGame(): MutableMap<String, Any> {
-        val _game: MutableMap<String, Any> = HashMap()
-
-        _game["title"] = binding.editTitle.text.toString()
-        _game["createdAt"] = binding.editCreatedAt.text.toString()
-        _game["description"] = binding.editDescription.text.toString()
-        _game["urlCover"] = cover
-
-        return _game
+    fun getGame(): Game {
+        return Game(
+            binding.editTitle.text.toString(),
+            binding.editCreatedAt.text.toString(),
+            binding.editDescription.text.toString(),
+            cover,
+        )
     }
 
-    fun saveGame(game: MutableMap<String, Any>) {
-        val title = binding.editTitle.text.toString()
-
-        collectionGames.document(title).set(game).addOnSuccessListener {
-            Log.d("ADD_NEW_GAME", "sendGame Firebase")
-
-        }.addOnFailureListener {
-            Log.i("ADD_NEW_GAME", it.toString())
-        }
+    fun toMain() {
+        finishAffinity()
+        var intent = Intent(application, HomeActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -83,7 +90,7 @@ class CadastroGameActivity : AppCompatActivity() {
 
             uploadTask.continueWithTask { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "isSuccessfull", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Imagem anexada", Toast.LENGTH_SHORT).show()
                 }
                 storageReference!!.downloadUrl
             }.addOnCompleteListener { task ->
@@ -93,6 +100,11 @@ class CadastroGameActivity : AppCompatActivity() {
 
                 Log.i("URL: ", url)
                 cover = url
+
+                binding.imageViewRounded.getLayoutParams().height = 200;
+
+                Picasso.get().load(url)
+                    .into(binding.imageViewRounded)
 
                 alertDialog.dismiss()
             }

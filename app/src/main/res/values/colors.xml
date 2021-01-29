@@ -13,5 +13,6 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="custom_red">#FFff5253</color>
-    <color name="custom_grey">#FFdddddd</color>
+    <color name="custom_grey_200">#FFdddddd</color>
+    <color name="custom_grey_700">#838383</color>
 </resources>

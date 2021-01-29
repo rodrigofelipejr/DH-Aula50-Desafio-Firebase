@@ -1,11 +1,10 @@
-package com.house.digital.views.ui
+package com.house.desafio_firebase.views.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.house.digital.databinding.ActivityCadastroBinding
+import com.house.desafio_firebase.databinding.ActivityCadastroBinding
 
 class CadastroActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityCadastroBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,100 +1,33 @@
 {
   "project_info": {
-    "project_number": "732295286527",
-    "firebase_url": "https://login-firebase-69037-default-rtdb.firebaseio.com",
-    "project_id": "login-firebase-69037",
-    "storage_bucket": "login-firebase-69037.appspot.com"
+    "project_number": "907506762495",
+    "project_id": "fir-dh-6e2c6",
+    "storage_bucket": "fir-dh-6e2c6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:732295286527:android:955f56866e6b16433906ca",
+        "mobilesdk_app_id": "1:907506762495:android:1e1a892849d622882cc2ca",
         "android_client_info": {
-          "package_name": "com.house.digital"
+          "package_name": "com.house.desafio_firebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
+          "client_id": "907506762495-dc5q849vjdmcr224qnn66f7bcnuqritp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAoQnLMvQRZt9eQX6jVRQeznEqsGohqUHQ"
+          "current_key": "AIzaSyCVBc7taDC7YFQWIRkPleHBYLwaTUs3dgQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:732295286527:android:74a1cb2acfa925bf3906ca",
-        "android_client_info": {
-          "package_name": "br.com.house.storage"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAoQnLMvQRZt9eQX6jVRQeznEqsGohqUHQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:732295286527:android:bc30247823cfb4fa3906ca",
-        "android_client_info": {
-          "package_name": "com.digitalhouse.desafiofirebase"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "732295286527-f7enu7fvnnq9g3811fn0a4aa0ve72uhk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digitalhouse.desafiofirebase",
-            "certificate_hash": "65a71bfb1b8fc1604f0988e3953c904ac34f18c9"
-          }
-        },
-        {
-          "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAoQnLMvQRZt9eQX6jVRQeznEqsGohqUHQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "732295286527-usfsqo9e9fnn8im0ali52fsofr4cmobn.apps.googleusercontent.com",
+              "client_id": "907506762495-dc5q849vjdmcr224qnn66f7bcnuqritp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/custom_grey"
+    android:background="@color/custom_grey_200"
     android:padding="12dp"
-    tools:context=".views.ui.MainActivity">
+    tools:context=".views.ui.HomeActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -25,7 +25,7 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:src="@drawable/ic_baseline_search_24"
-            app:tint="@color/custom_grey" />
+            app:tint="@color/custom_grey_200" />
 
         <EditText
             android:id="@+id/editText_pesquisar"
@@ -47,7 +47,7 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:src="@drawable/ic_baseline_mic_24"
-            app:tint="@color/custom_grey" />
+            app:tint="@color/custom_grey_200" />
 
     </LinearLayout>
 

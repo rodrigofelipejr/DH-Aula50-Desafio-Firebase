@@ -1,4 +1,4 @@
-package com.house.digital
+package com.house.desafio_firebase
 
 import org.junit.Test
 

@@ -1,10 +1,9 @@
-package com.house.digital.views.ui
+package com.house.desafio_firebase.views.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.house.digital.R
-import com.house.digital.databinding.ActivityLoginBinding
+import com.house.desafio_firebase.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -19,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.buttonLogin.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
             finish()
         }
     }
